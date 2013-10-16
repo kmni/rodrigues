@@ -8,7 +8,7 @@ Social = {
     // facebook timeline
     $.getJSON(url, params, function(data) {
       $("#facebook").html($.tmpl($("#facebook_template"), data.data));
-      //console.log(data.data);
+      console.log(data.data);
       var $fb_news = $('#facebook');
       // once loaded
       $fb_news.imagesLoaded(function(){

@@ -12,9 +12,10 @@
     <link href="./css/bootstrap-responsive.css" rel="stylesheet">
     <link href="./js/colorbox/colorbox.css" rel="stylesheet">
     <link href="./css/custom.css" rel="stylesheet">
+    <link href="./css/social.css" rel="stylesheet">
 </head>
 
-<body class="horses">
+<body class="social">
 
     <div class="navbar navbar-static-top">
         <div class="navbar-inner clearfix">
@@ -35,9 +36,9 @@
                     <li class="first"><a href="/">Home</a></li>
                     <li><a href="./about-us.html">About us</a></li>
                     <li><a href="./services.html">Services</a></li>
-                    <li class="active"><a href="./horses.html">Horses</a></li>
+                    <li><a href="./horses.html">Horses</a></li>
                     <li><a href="./news.html">News</a></li>
-                    <li><a href="./social.html">Social</a></li>
+                    <li class="active"><a href="./social.html">Social</a></li>
                     <li class="last"><a href="./contact.html">Contact</a></li>
                 </ul>
             </div> <!--// .container -->
@@ -48,39 +49,15 @@
         <div class="content_inner">
             <div class="row-fluid">
                 <div class="span12">
-                    <h1>Sale horses</h1>
-                    <div id="horses">
-                        <div class="item span4">
-                            <a href="horse-detail.html" title=""><img class="img-polaroid" src="./img/horses/01.jpg" alt="01"></a>
-                            <h3><a href="horse-detail.html" title="">Nameofhorse</a></h3>
-                            <p>Sire X Dam</p>
-                        </div>
-                        <div class="item span4">
-                            <a href="horse-detail.html" title=""><img class="img-polaroid" src="./img/horses/01.jpg" alt="01"></a>
-                            <h3><a href="horse-detail.html" title="">Nameofhorse</a></h3>
-                            <p>Sire X Dam</p>
-                        </div>
-                        <div class="item span4">
-                            <a href="horse-detail.html" title=""><img class="img-polaroid" src="./img/horses/01.jpg" alt="01"></a>
-                            <h3><a href="horse-detail.html" title="">Nameofhorse</a></h3>
-                            <p>Sire X Dam</p>
-                        </div>
-                        <div class="item span4">
-                            <a href="horse-detail.html" title=""><img class="img-polaroid" src="./img/horses/01.jpg" alt="01"></a>
-                            <h3><a href="horse-detail.html" title="">Nameofhorse</a></h3>
-                            <p>Sire X Dam</p>
-                        </div>
-                        <div class="item span4">
-                            <a href="horse-detail.html" title=""><img class="img-polaroid" src="./img/horses/01.jpg" alt="01"></a>
-                            <h3><a href="horse-detail.html" title="">Nameofhorse</a></h3>
-                            <p>Sire X Dam</p>
-                        </div>
-                        <div class="item span4">
-                            <a href="horse-detail.html" title=""><img class="img-polaroid" src="./img/horses/01.jpg" alt="01"></a>
-                            <h3><a href="horse-detail.html" title="">Nameofhorse</a></h3>
-                            <p>Sire X Dam</p>
-                        </div>
-                    </div>
+                    <h1>Social</h1>
+                    <div id="social">
+                        <!-- Facebook BEGIN -->
+                        <ul id="facebook">
+                            <li class="loading"><img src="img/ajax-loader.gif" alt="" width="24" height="24"><br>Loading…</li>
+                        </ul>
+                        <!-- Facebook END -->
+
+                    </div> <!--// #social -->
                 </div>
             </div>
         </div>
@@ -111,5 +88,47 @@
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/colorbox/jquery.colorbox-min.js"></script>
     <script src="./js/hju.js"></script>
+
+    <script src="./js/jquery.autolink.js"></script>
+    <script src="./js/jquery.timeago.js"></script>
+    <script src="./js/jquery.tmpl.js"></script>
+    <script src="./js/twitter-text.js"></script>
+    <script src="./js/social.js"></script>
+    <script src="./js/masonry.pkgd.min.js"></script>
+    <script src="./js/jquery.imagesloaded.min.js"></script>
+
+    <script id="facebook_template" type="text/x-jquery-tmpl">
+      {{if type != "status" || typeof message != "undefined" || typeof caption != "undefined" }}
+      <li>
+        <div class="content clearfix">
+            {{if picture}}
+              <a class="image" href="${link}" target="_blank"><img alt="picture" src="${Social.facebookPictureURL(picture)}"></a>
+            {{/if}}
+            {{if message}}
+            <p class="html_message">{{html message}}</p>
+            {{/if}}
+            {{if caption}}
+            <p class="html_caption">{{html caption}}</p>
+            {{/if}}
+            {{if type == "link"}}
+            <div class="link">
+              <a href="${link}" target="_blank"><strong>${name}</strong></a> <i>${caption}</i>
+              {{if description}}
+                <p>${description}</p>
+              {{/if}}
+            </div> <!--// .link -->
+            {{/if}}
+        </div> <!--// .content -->
+        <div class="footer">
+          Posted <span class="fb_date" title="${created_time}">${created_time}</span> on <a class="author" href="http://www.facebook.com/profile.php?id=${from.id}" target="_blank">Facebook</a> 
+        </div> <!--// .footer -->
+      </li>
+      {{/if}}
+    </script>
+    <script>
+        // "103882419703669" is Facebook page ID
+        // "392120024178056|aqQUlwOblkyuLzKmxZm39SeBVck" is Facebook authentication token
+        Social.facebook("RodriguesTrainingcenter", "392120024178056|aqQUlwOblkyuLzKmxZm39SeBVck");
+    </script>
   </body>
 </html>

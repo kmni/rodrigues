@@ -31,6 +31,11 @@ h2 a:hover {text-decoration: underline;}
 .navbar-static-top {position: relative; z-index: 100; padding-top: 127px;}
 .navbar-static-top .container {position: relative;}
 .navbar .navbar-inner {width: 100%; height: auto; background: #210E00 url(../img/bg_navbar.jpg) center top repeat-x; border: 1px solid #602900; border-width: 1px 0; box-shadow: 0 0 10px 2px #000; padding: 1px 0;}
+.navbar-static-top #mobile_navi {display: none;}
+.navbar-static-top #mobile_navi > li {display: block; width: 100%; padding: 0; margin: 0;}
+.navbar-static-top #mobile_navi > li > a {display: block; font-size: 16px; text-align: left; border: none; padding: 22px 33px;}
+.navbar-static-top #mobile_navi > li > a img {float: right; width: 16px; height: auto; background: url(../img/mobile-navi-arrow.png) 50% 0 no-repeat; margin-top: 0px;}
+.navbar-static-top #mobile_navi.expanded > li > a img {background-position: 50% -20px}
 .navbar-static-top .nav {width: 76.5%; max-width: 765px; height: auto; text-align: right;}
 .navbar-static-top .nav > li {margin: 0 12px;}
 .navbar-static-top .nav > .first {margin-left: 0;}
@@ -43,9 +48,33 @@ h2 a:hover {text-decoration: underline;}
 .navbar-static-top .nav > .active > a:hover,
 .navbar-static-top .nav > .active > a:focus {color: #fff; border-color: #7b3400; background: transparent;}
 .navbar-static-top .navbar-inner {padding-right: 0px;}
-@media (max-width: 640px) {.navbar-static-top .nav {width: 100%;}}
-@media (max-width: 480px) {#logo {left: -8px;} #socials {top: -70px;} .navbar-static-top .nav > li > a {font-size: 13px; padding: 11px 17px;}}
-@media (max-width: 480px) and (orientation: portrait) {.navbar-static-top .nav > li > a {font-size: 11px;}}
+@media (max-width: 1020px) {.navbar-static-top .nav > li > a {font-size: 12px; line-height: 16px; padding: 16px 12px 17px 12px;}}
+@media (max-width: 890px) {
+    .navbar-static-top .nav > li {margin: 0 8px;}
+    .navbar-static-top .nav > li > a {padding: 16px 10px 17px;}
+}
+@media (max-width: 795px) {
+    .navbar-static-top .nav > li {margin: 0 6px;}
+    .navbar-static-top .nav > li > a {font-size: 11px; line-height: 16px; padding: 16px 8px 17px;}
+}
+@media (max-width: 680px) {
+    .navbar-static-top .nav > li {margin: 0 4px;}
+    .navbar-static-top .nav > li > a {font-size: 11px; line-height: 16px; padding: 16px 6px 17px;}
+}
+@media (max-width: 640px) {
+    .navbar-static-top .nav {width: 100%;}
+    .navbar-static-top .nav > li > a {font-size: 11px; line-height: 16px; padding: 16px 7px 17px;}   
+}
+@media (max-width: 480px) {
+    #logo {left: -8px;} #socials {top: -70px;}
+    #top_navi {display: none;}
+    #top_navi.expanded {display: block;}
+    #top_navi.expanded li {float: none; display: block; width: 100%; padding: 0; margin: 0;}
+    #top_navi.expanded li a {font-size: 16px; text-align: left; border: none; padding-left: 35px;}
+    #top_navi.expanded .active a,
+    #top_navi.expanded li a:hover {text-decoration: underline; background: none!important;}
+    .navbar-static-top #mobile_navi {display: block;}
+}
 
 .container {position: relative; z-index: 10;}
 

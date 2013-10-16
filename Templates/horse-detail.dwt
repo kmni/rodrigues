@@ -34,7 +34,10 @@
                     <a href="https://www.facebook.com/RodriguesTrainingcenter" class="facebook" title="Rodrigues Training Center on Facebook"><img src="../img/s.gif" alt="Facebook" /></a>
                     <a class="twitter" href="" title=""><img src="../img/s.gif" alt="Twitter" /></a>
                 </div>
-                <ul class="nav pull-right">
+                <ul class="nav pull-right" id="mobile_navi">
+                    <li><a href="#" title="Show me menu">MENU <img src="./img/s.gif" alt="V"></a></li>
+                </ul>
+                <ul class="nav pull-right" id="top_navi">
                     <li class="first"><a href="/">Home</a></li>
                     <li><a href="../about-us.html">About us</a></li>
                     <li><a href="../services.html">Services</a></li>
@@ -145,6 +148,7 @@
     <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/colorbox/jquery.colorbox-min.js"></script>
+    <script src="./js/hju.js"></script>
     <!-- Colorbox JavaScript. -->
     <script type="text/javascript">
     $(document).ready(function(){
